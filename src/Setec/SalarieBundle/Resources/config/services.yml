@@ -1,0 +1,6 @@
+services:
+    setec_salarie.registration.form.type:
+        class: Setec\SalarieBundle\Form\Type\RegistrationFormType
+        arguments: [%fos_user.model.user.class%]
+        tags:
+            - { name: form.type, alias: setec_salarie_registration }

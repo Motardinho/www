@@ -1,0 +1,130 @@
+{% extends "::main.html.twig" %}
+
+{% block title %}
+Dépot - Dossiers affaires éléctroniques - {{ parent() }}
+{% endblock %}
+
+{% block body %}
+<div class="row">
+    <div id="menu" class="span3">
+        <h3>Menu</h3>
+        <ul class="nav nav-pills nav-stacked">
+            <li><a href="{{ path('setec_affelec_accueil') }}">Dépôt d'un document</a></li>
+            <li><a href="{{ path('setec_affelec_recherche') }}">Recherche de documents</a></li>
+            <li><a href="{{ path('setec_affelec_admin') }}">Administration</a></li>
+        </ul>
+
+    </div>
+
+    <div id="content" class="span9">		
+		{% block baseco %}
+        <div class="page-header">
+            <h1>Dépôt d'un document</h1>
+        </div>
+
+        <form class="form-horizontal span6">
+            <fieldset>
+                <div class="control-group">
+                    <!-- Select Basic -->
+                    <label class="control-label">Affaire</label>
+                    <div class="controls">
+                        <select class="span4">
+                            <option>02191025 - FRAIS LINEA</option>
+                            <option>02199004 - SETEC BATIMENT</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <!-- Text input-->
+                    <label class="control-label" for="nom">Description du fichier</label>
+                    <div class="controls">
+                        <textarea id="nom" class="span4" rows="5"></textarea>
+                        <p class="help-inline">255 caractères maxi.</p>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label">Fichier</label>
+                    <!-- File Upload -->
+                    <div class="controls">
+                        <input class="input-file span4" id="fileInput" type="file">
+                    </div>
+                </div>
+                <div class="control-group">
+                    <!-- Select Basic -->
+                    <label class="control-label">Type document</label>
+                    <div class="controls">
+                        <select class="span4">
+                            <option>Contrat</option>
+                            <option>Avenant</option>
+                            <option>Annexe</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label">Mots-clés</label>
+                    <!-- Multiple Checkboxes -->
+                    <div class="controls">
+                        <label class="checkbox inline">
+                            <input type="checkbox" value="1"> Mot-clé1
+                        </label>
+                        <label class="checkbox inline">
+                            <input type="checkbox" value="2"> Mot-clé2
+                        </label>
+                        <label class="checkbox inline">
+                            <input type="checkbox" value="3"> Mot-clé3
+                        </label>
+                        <label class="checkbox inline">
+                            <input type="checkbox" value="4"> Mot-clé4
+                        </label>
+                        <label class="checkbox inline">
+                            <input type="checkbox" value="5"> Mot-clé5
+                        </label>
+                        <label class="checkbox inline">
+                            <input type="checkbox" value="6"> Mot-clé6
+                        </label>
+                        <label class="checkbox inline">
+                            <input type="checkbox" value="7"> Mot-clé7
+                        </label>
+                        <label class="checkbox inline">
+                            <input type="checkbox" value="7"> Mot-clé7
+                        </label>
+                        <label class="checkbox inline">
+                            <input type="checkbox" value="7"> Mot-clé7
+                        </label>
+                        <label class="checkbox inline">
+                            <input type="checkbox" value="7"> Mot-clé7
+                        </label>
+                        <label class="checkbox inline">
+                            <input type="checkbox" value="7"> Mot-clé7
+                        </label>
+                        <label class="checkbox inline">
+                            <input type="checkbox" value="7"> Mot-clé7
+                        </label>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <!-- Form Actions -->
+                    <div class="controls">
+                        <button type="submit" class="btn btn-primary">Enregistrer document</button>
+                        <button type="button" class="btn">Annuler</button>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+
+        <form method="post" {{ form_enctype(form) }} class="form-horizontal span6">
+            {{ form_widget(form) }}
+            <input type="submit" class="btn btn-primary" />
+        </form>
+		{% endblock %}
+	</div>
+</div>
+{% endblock %}
+
+{% block javascripts %}
+{{ parent() }}
+<script>
+	$("li").removeClass("active");
+	$("li#Affelec").addClass("active");
+</script>
+{% endblock %}

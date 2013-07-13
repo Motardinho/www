@@ -1,0 +1,144 @@
+{% extends "::main.html.twig" %}
+
+{% block title %}
+    Blog - {{ parent() }}
+{% endblock %}
+
+{% block stylesheets %}
+{{ parent() }}
+<style>
+ol, ul {
+list-style: none;
+}
+
+.group:after {
+content: ".";
+display: block;
+height: 0;
+clear: both;
+visibility: hidden;
+}
+
+body#shots ol.dribbbles li.group {
+width: 22.680412371134%;
+margin: 0 3.092783505155% 30px 0;
+}
+
+ol.dribbbles li.group {
+position: relative;
+width: 30.555555555556%;
+float: left;
+padding: 0;
+margin: 0 4.166666666667% 30px 0;
+}
+
+.box {
+background: #fff;
+-webkit-border-radius: 3px;
+-moz-border-radius: 3px;
+border-radius: 3px;
+-webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07);
+-moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07);
+box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07);
+}
+    .article {
+        margin: 0 25px 25px 0;
+        width: 250px;
+        float:left; position: relative;
+    }
+
+    .titre-article {
+        font-size: 18px;
+        /*font-family: 'Questrial', sans-serif;*/
+        line-height: 30px;
+    }
+
+    .image-article {
+        text-align: center;
+        margin: 13px 0;
+
+    }
+
+    .image-article > img {
+        
+                -webkit-border-radius: 3px 3px 0 0;
+-moz-border-radius: 3px 3px 0 0;
+border-radius: 3px 3px 0 0;
+    }
+
+    .date-article {
+        padding: 5px;
+        font-size: 28px;
+        color: #fff;
+    }
+
+    .pagination {
+        clear:left;
+    }
+
+
+</style>
+{% endblock %}
+
+{% block body %}
+
+
+
+        <h1>Le blog</h1>
+        <ul class="unstyled">
+            {% for article in articles %}
+                <li>
+                    <div class="article box">
+                        {% if article.image is not null %}
+                            <div id="" class="image-article">
+                                <img src="{{ article.image.url }}" alt="{{ article.image.alt }}"  />
+                            </div>
+                        {% endif %}
+                        <div class="entete-article">
+                            <div class="date-article" style="float:left; background-color: #5ed3eb; width: 42px; height: 56px;">
+                                22<br/>OCT<br />2012
+                            </div>
+                            <div style="height: 66px; margin-left: 65px;">
+                                <div class="titre-article">
+                                    {{ article.titre }}
+                                </div>
+                                <div>
+                                    par {{ article.auteur }}
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="">
+                                <a href="{{ path('sdz_blog_voir', {'slug': article.slug}) }}">{{ article.titre }}</a>
+                            
+                            le {{ article.date|date('d/m/Y') }}
+                        </div>
+                    </div>
+                </li>
+            {% else %}
+                <li>Pas d'articles trouvés</li>
+            {% endfor %}
+        </ul>
+
+        <div class="pagination">
+            <ul>
+                {% for p in range(1, nbPages) %}
+                    <li{% if p == page %} class="active"{% endif %}>
+                        <a href="{{ path('sdz_blog_accueil', {'page': p}) }}">{{ p }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+
+    <!-- <div class="span4">
+        <div style="margin-top: 50px;">
+            <form class="navbar-search" action="{{ path('sdz_blog_accueil') }}" method="post">
+                                        
+                                        <input type="text" name="toto" class="" placeholder="Recherche">
+                                    </form>
+        </div>
+    </div> -->
+
+   
+{% endblock %}
+

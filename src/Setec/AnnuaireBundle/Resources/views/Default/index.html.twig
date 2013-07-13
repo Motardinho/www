@@ -1,0 +1,116 @@
+{% extends "::main.html.twig" %}
+
+{% block title %}
+    Annuaire - {{ parent() }}
+{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('css/DT_bootstrap.css') }}" />
+    <link rel="stylesheet" href="{{ asset('css/ColReorder.css') }}" />
+    <link rel="stylesheet" href="{{ asset('css/ColVis.css') }}" />
+    <style>
+        #salaries_filter label input {
+            margin-right:15px;
+            width:150px;
+        }
+
+        .table form {
+            margin-bottom: 0;
+        }        
+
+        .table form input {
+            width: auto;
+        }
+    </style>
+{% endblock %}
+
+{% block body %}
+    <h2>Ici c'est l'annuaire</h2>
+
+    <table id="salaries" class="table table-bordered table-striped dataTable">
+        <thead>
+            <tr>
+                <th>ID</th><th>Matricule</th><th>Nom</th><th>Prénom</th><th>Trigramme</th><th>Email</th><th class="span"></th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for salarie in salaries %}
+            <tr>
+                <td>{{ salarie.id }}</td><td>{{ salarie.matricule }}</td><td>{{ salarie.nom }}</td><td>{{ salarie.prenom }}</td><td>{{ salarie.username }}</td><td>{{ salarie.email }}</td>
+                <td><div class=""><a href="#modalModifier"  title="Modifier la fiche" role="button" data-toggle="modal"><i class="icon-pencil"></i></a><a href="#modalAnnuler" title="Annuler la fiche" role="button" data-toggle="modal"><i class="icon-remove"></i></a></div></td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock body %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset('js/jquery.dataTables.js') }}"></script>
+    <script src="{{ asset('js/DT_bootstrap.js') }}"></script>
+    <script src="{{ asset('js/ColReorder.js') }}"></script>
+    <script src="{{ asset('js/ColVis.js') }}"></script>
+    <script src="{{ asset('js/jquery.jeditable.js') }}"></script>
+    <script src="{{ asset('js/jquery.validate.js') }}"></script>
+    <script src="{{ asset('js/jquery.dataTables.editable.js') }}"></script>
+    <script>
+        $(document).ready(function() {
+            $('#salaries').dataTable( {
+                "sDom": "<'row'<'span6'l><'span6'CfR>r>t<'row'<'span6'i><'span6'p>>",
+                "sPaginationType": "bootstrap",
+                "oLanguage": {
+                    "sProcessing":     "Traitement en cours...",
+                    "sSearch":         "Rechercher&nbsp;:",
+                    "sLengthMenu":     "Afficher _MENU_ &eacute;l&eacute;ments",
+                    "sInfo":           "Affichage de l'&eacute;lement _START_ &agrave; _END_ sur _TOTAL_ &eacute;l&eacute;ments",
+                    "sInfoEmpty":      "Affichage de l'&eacute;lement 0 &agrave; 0 sur 0 &eacute;l&eacute;ments",
+                    "sInfoFiltered":   "(filtr&eacute; de _MAX_ &eacute;l&eacute;ments au total)",
+                    "sInfoPostFix":    "",
+                    "sLoadingRecords": "Chargement en cours...",
+                    "sZeroRecords":    "Aucun &eacute;l&eacute;ment &agrave; afficher",
+                    "sEmptyTable":     "Aucune donnée disponible dans le tableau",
+                    "oPaginate": {
+                        "sFirst":      "Premier",
+                        "sPrevious":   "Pr&eacute;c&eacute;dent",
+                        "sNext":       "Suivant",
+                        "sLast":       "Dernier"
+                    },
+                    "oAria": {
+                        "sSortAscending":  ": activer pour trier la colonne par ordre croissant",
+                        "sSortDescending": ": activer pour trier la colonne par ordre décroissant"
+                    }
+                }
+                ,
+                "oColVis": {
+                    "bRestore": true,
+                    "buttonText": 'Affichage des colonnes <span class="caret"></span>',
+                    "aiExclude": [ 0,2,3 ],
+                    "sRestore": "Restaurer colonnes"
+                }
+            } ).makeEditable({
+                sUpdateURL: function(value, settings)
+                {
+                    return(value);
+                },
+                oEditableSettings: { event: 'click', placeholder: '' },
+                "aoColumns": [
+                    null,
+                    {},
+                    {},
+                    {},
+                    {
+                        tooltip   : 'Double-clic pour modifier...',
+                        type: 'select',
+                        cancel: 'Annuler',
+                        submit: 'Ok',
+                        data: "{'':'Please select...', 'A':'A','B':'B','C':'C'}",
+                        event: "click"
+                    },
+                    null,
+                    null
+                ]
+            })
+        });
+    </script>
+{% endblock %}

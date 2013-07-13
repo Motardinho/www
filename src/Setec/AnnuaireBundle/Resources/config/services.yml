@@ -1,0 +1,7 @@
+parameters:
+#    setec_annuaire.example.class: Setec\AnnuaireBundle\Example
+
+services:
+#    setec_annuaire.example:
+#        class: %setec_annuaire.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

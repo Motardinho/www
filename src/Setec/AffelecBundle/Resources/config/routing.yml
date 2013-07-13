@@ -1,0 +1,11 @@
+setec_affelec_accueil:
+    pattern:  /
+    defaults: { _controller: SetecAffelecBundle:Default:depot }
+
+setec_affelec_recherche:
+    pattern: /recherche
+    defaults: { _controller: SetecAffelecBundle:Default:recherche }
+
+setec_affelec_admin:
+    pattern: /admin
+    defaults: { _controller: SetecAffelecBundle:Default:admin }

@@ -1,0 +1,7 @@
+parameters:
+#    setec_gdoc.example.class: Setec\GdocBundle\Example
+
+services:
+#    setec_gdoc.example:
+#        class: %setec_gdoc.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

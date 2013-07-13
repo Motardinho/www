@@ -1,0 +1,7 @@
+parameters:
+#    setec_intranet.example.class: Setec\IntranetBundle\Example
+
+services:
+#    setec_intranet.example:
+#        class: %setec_intranet.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

@@ -1,0 +1,4 @@
+setec_baseco_accueil:
+    pattern:    /
+    defaults:   { _controller: SetecBasecoBundle:Baseco:index }
+

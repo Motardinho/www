@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}" type="text/css" media="all" />
+        <link rel="stylesheet" href="{{ asset('css/bootstrap-responsive.css') }}" />
+        <title>Intranet groupe setec</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <style type="text/css">
+            html {
+                background-color: rgba(0, 0, 255, 0.5);
+                height: 100%;
+            }
+            body {
+                
+                background-color: rgba(0, 0, 0, 0.5);
+                height: 100%;
+            }
+
+            .form-signin {
+                max-width: 300px;
+                padding: 29px;
+                margin: 100px auto;
+                background-color: #fff;
+                border: 1px solid #e5e5e5;
+                -webkit-border-radius: 5px;
+                -moz-border-radius: 5px;
+                border-radius: 5px;
+                -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+                -moz-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+                box-shadow: 0 1px 2px rgba(0,0,0,.05);
+            }
+            .form-signin .form-signin-heading,
+            .form-signin .checkbox {
+                margin-bottom: 10px;
+            }
+            .form-signin input[type="text"],
+            .form-signin input[type="password"] {
+                font-size: 21px;
+                height: auto;
+                margin-bottom: 15px;
+                padding: 9px 9px;
+            }
+
+            html { 
+                margin:0;
+                padding:0;
+                background: url(http://media.lemoniteur.fr/Architopik/programme/projet/format/resize/1001/format1/projet_1001/22657de8aa_9bda2_1200_600.jpg) no-repeat center fixed; 
+                -webkit-background-size: cover; /* pour Chrome et Safari */
+                -moz-background-size: cover; /* pour Firefox */
+                -o-background-size: cover; /* pour Opera */
+                background-size: cover; /* version standardisée */
+            }
+
+            form>h2 {
+                font-size: 26px;
+            }
+        </style>
+        <!--[if lt IE 9]>
+              <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+
+    <div class="container">
+
+        {% block fos_user_content %}
+        <form action="{{ path('fos_user_registration_register') }}" {{ form_enctype(form) }} method="POST" class="form-signin">
+            {{ form_widget(form) }}
+            <div>
+                <input type="submit" value="{{ 'registration.submit'|trans({}, 'FOSUserBundle') }}" />
+            </div>
+        </form>
+        {% endblock fos_user_content %}
+
+        <div id="mdpOublie" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h3 id="myModalLabel">Récuperation du mot de passe</h3>
+            </div>
+            <div class="modal-body">
+                <form method="post" id="get-credentials-form" class="span5">
+                    <p>Veuillez entrer l'adresse e-mail associée à votre compte</p>
+                    <input type="text" name="email" id="email-tf" class="span6 required">
+                    <div class="alert alert-error hide" style="display: none;"></div>
+                    <button data-dismiss="alert" class="close"></button>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn" data-dismiss="modal" aria-hidden="true">Fermer</button>
+                <button class="btn btn-primary">Valider</button>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- <div style="background-color: #222; color: #fff; position: fixed; padding: 5px; bottom: 10px; left: 50%; font-size: 12px; margin-left: -250px; width:500px; text-align:center;">
+        Envoyez vos photos libres de droit avec description à l'adresse <a href="">info.sas@sas.setec.fr</a>. 
+    </div> -->
+
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="{{ asset('js/bootstrap.js') }}"></script>
+
+    <script>
+        $(document).ready(function()
+        {
+            $("#username").focus();
+        });
+    </script>
+    
+    </body>

@@ -1,0 +1,11 @@
+{% extends '::base.html.twig' %}
+
+{% block title %}
+    {{ parent() }} - Bienvenue ! 
+{% endblock %}
+
+{% block body %}
+    <h1>hello les fermiers !</h1>
+    <a href="{{ path('homepage') }}">Accueil</a> - <a href="{{ path('desk_show', {"deskId": 5}) }}">Bureau n°5</a><br>
+    <a href="{{ path('desk_add') }}">Ajouter un bureau</a>
+{% endblock %}

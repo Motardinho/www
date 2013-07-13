@@ -1,0 +1,25 @@
+{% extends "::main.html.twig" %}
+
+{% block title %}
+	Ajouter un article - {{ parent() }}
+{% endblock %}
+
+{% block body %}
+    <h2>Ajouter un article</h2>
+    Salut {{ app.user.username }} - {{ app.user.email }}
+    {% include 'SdzBlogBundle:Blog:formulaire.html.twig' %}
+    <p>
+        Attention : cet article sera ajouté directement 
+        sur la page d'accueil après la validation du formulaire.
+    </p>
+{% endblock %}
+
+{% block javascripts %}
+{{ parent() }}
+<script src="{{ asset('js/ckeditor/ckeditor.js') }}"></script>
+<script>
+	CKEDITOR.replace('sdz_blogbundle_articletype[contenu]', {
+		enterMode: CKEDITOR.ENTER_BR
+	});
+</script>
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends "::main.html.twig" %}
+
+{% block body %}
+<div class="row">
+    <div id="menu" class="span3">
+        <h3>Menu</h3>
+        <ul class="nav nav-pills nav-stacked">
+            <li><a href="{{ path('setec_affelec_accueil') }}">Dépôt d'un document</a></li>
+            <li><a href="{{ path('setec_affelec_recherche') }}">Recherche de documents</a></li>
+            <li><a href="{{ path('setec_affelec_admin') }}">Administration</a></li>
+        </ul>
+
+    </div>
+
+    <div id="content" class="span9">		
+		{% block baseco %}
+        <div class="page-header">
+            <h1>Recherche de documents</h1>
+        </div>
+
+		{% endblock %}
+	</div>
+</div>
+{% endblock %}
+
+{% block javascripts %}
+{{ parent() }}
+<script>
+    $("li").removeClass("active");
+    $("li#Affelec").addClass("active");
+</script>
+{% endblock %}

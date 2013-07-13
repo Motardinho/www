@@ -1,0 +1,3 @@
+sdz_blog_accueil:
+    pattern:    /{page}
+    defaults:   { _controller: SdzBlogBundle:Blog:index, page: 1 }

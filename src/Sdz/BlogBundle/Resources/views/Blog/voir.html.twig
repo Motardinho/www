@@ -1,0 +1,119 @@
+{% extends "::main.html.twig" %}
+
+{% block title %}
+    {{ article.titre }} - {{ parent() }}
+{% endblock %}
+
+{% block stylesheets %}
+{{ parent() }}
+<link rel="stylesheet" href="{{ asset('css/prettify.css') }}" />
+<link rel="stylesheet" href="{{ asset('css/editr.css') }}" />
+<style>
+    #image {
+        margin: 15px 0;
+    }
+
+    #image > img {
+        display: block;
+        margin: 0 auto;
+        height: 250px;
+        width: 600px;
+    }
+
+    #disqus_thread {
+        margin-top: 50px;
+    }
+
+    #contenu {
+        text-align: justify;
+        margin-bottom: 50px;
+    }
+</style>
+{% endblock %}
+
+{% block body %}
+<div class="row">
+    <div class="span8">
+        <h2>
+            {{ article.titre }}
+        </h2>
+        <i>Par {{ article.auteur }}, le {{ article.date|date('d/m/Y') }}</i>
+
+        {% if article.image is not null %}
+            <div id="image">
+                <img src="{{ article.image.url }}" alt="{{ article.image.alt }}" class="img-polaroid" />
+            </div>
+        {% endif %}
+        <!-- {% if article.categories.count > 0 %}
+            - Catégories : 
+            {% for categorie in article.categories %}
+                {{ categorie.nom }}
+                {% if not loop.last %} - {% endif %}
+            {% endfor %}
+        {% endif %} -->
+
+        <div id="contenu">
+            {{ article.contenu | raw }}
+        </div>
+        <hr>
+        <p>
+            <a href="{{ path('sdz_blog_accueil') }}" class="btn">
+                <i class="icon-chevron-left icon-white"></i>
+                Retour aux articles
+            </a>
+            {% if is_granted('ROLE_ADMIN') %}
+            <a href="{{ path('sdz_blog_modifier', {'slug': article.slug}) }}" class="btn">
+                <i class="icon-edit icon-white"></i>
+                Modifier l'article
+            </a>
+            <a href="{{ path('sdz_blog_supprimer', {'slug': article.slug}) }}" class="btn">
+                <i class="icon-trash icon-white"></i>
+                Supprimer l'article
+            </a>
+            {% endif %}
+        </p>
+        <hr>
+        <p>
+            <div id="disqus_thread"></div>
+            <script type="text/javascript">
+                /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+                var disqus_shortname = 'jayce75'; // required: replace example with your forum shortname
+
+                /* * * DON'T EDIT BELOW THIS LINE * * */
+                (function() {
+                    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                })();
+            </script>
+            <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+            <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+            
+        </p>
+
+    </div>
+    <div id="side" class="span4">
+        <div>
+            <h3>Mots-clés</h3>
+            <p>
+                {% for tag in tags %}
+                    <span class="label">{{ tag.nom}}</span>
+                {% endfor %}
+            </p>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+
+{% block javascripts %}
+{{ parent() }}
+<script src="{{ asset('js/prettify.js') }}"></script>
+<script>
+$(document).ready(function() {
+        prettyPrint();
+
+        $('.editr').editr();
+    });
+</script>
+{% endblock %}

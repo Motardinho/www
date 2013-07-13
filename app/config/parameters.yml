@@ -1,0 +1,17 @@
+parameters:
+    database_driver:   pdo_mysql
+    database_host:     localhost
+    database_port:     ~
+    database_name:     chikchaktoto
+    database_user:     root
+    database_password: 
+
+    mailer_transport:  gmail
+    mailer_host:       
+    mailer_user:       marc.magnon@gmail.com
+    mailer_password:   fifou963
+
+    locale:            fr
+    secret:            sas3010
+    
+    app_webmaster:     Marco

@@ -1,0 +1,17 @@
+{% extends '::base.html.twig' %}
+
+{% block title %}
+    {{ parent() }}
+    - {{ desk.title }}
+{% endblock %}
+
+{% block body %}
+    <h1>{{ desk.title }}</h1>
+    <p>
+        {{ desk.description }}
+    </p>
+    <p>
+        Bureau proposé le {{ desk.createdAt|date('d/m/Y') }}
+    </p>
+    <a href="{{ path("homepage") }}">Retour à l'accueil</a>
+{% endblock %}

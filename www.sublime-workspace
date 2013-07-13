@@ -1,0 +1,532 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"backgron",
+				"background-color"
+			],
+			[
+				"text",
+				"text-decoration"
+			],
+			[
+				"font",
+				"font-size"
+			],
+			[
+				"form",
+				"formBuilder"
+			],
+			[
+				"createForm",
+				"createFormBuilder  (function)"
+			],
+			[
+				"Setec",
+				"SetecDosAffElecBundle"
+			],
+			[
+				"backg",
+				"background-color"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "app/Resources/views/main.html.twig",
+			"settings":
+			{
+				"buffer_size": 6747,
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 58.0,
+		"selected_items":
+		[
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Remove Package"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"in",
+				"Package Control: Install Package"
+			],
+			[
+				"install ",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 536.0
+	},
+	"console":
+	{
+		"height": 132.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/wamp/www/sftp-config.json",
+		"/C/wamp/www/src/Setec/AffelecBundle/Entity/Fichier.php",
+		"/C/wamp/www/src/Setec/AffelecBundle/Controller/DefaultController.php",
+		"/C/wamp/www/src/Sdz/BlogBundle/Resources/views/Blog/index.html.twig",
+		"/C/wamp/www/app/Resources/views/main.html.twig",
+		"/C/wamp/www/test1/nbproject/project.xml",
+		"/C/wamp/www/test1/nbproject/project.properties",
+		"/C/wamp2/bin/php/php5.4.12/php.ini-production",
+		"/C/wamp/bin/php/php5.4.3/php.ini",
+		"/C/wamp/www/test1/nbproject/private/private.xml",
+		"/C/wamp/www/web/css/jayce.css",
+		"/C/wamp/www/web/css/bootstrap.css",
+		"/C/wamp/www/src/Sdz/BlogBundle/Resources/views/Blog/voir.html.twig",
+		"/C/wamp/www/src/Sdz/BlogBundle/Resources/views/Blog/ajouter.html.twig",
+		"/C/wamp/www/src/Sdz/BlogBundle/Resources/views/Blog/formulaire.html.twig",
+		"/C/wamp/www/src/Setec/SalarieBundle/Resources/views/Security/login.html.twig",
+		"/C/wamp/www/web/app.php",
+		"/C/wamp/www/app/config/config.yml",
+		"/C/wamp/www/src/Setec/BasecoBundle/Resources/views/Default/footer.html.twig",
+		"/C/wamp/www/app/config/parameters.yml",
+		"/Z/Téléchargements/Zend Studio v9.0.4 Développement PHP Pro -Anglais- ]HERiTAGE[/infos.nfo",
+		"/C/Users/marcm_000/Desktop/zend/Zend studio v 9.0.4/Crack Zend.Studio.Professional.Edition.v9.0.4.HERiTAGE/heritage.nfo",
+		"/C/xampp/htdocs/xampp/mon_projet/.project",
+		"/C/xampp/htdocs/xampp/mon_projet/.settings/com.aptana.editor.php.prefs",
+		"/C/wamp/www/src/Sdz/BlogBundle/Resources/views/Blog/article.html.twig",
+		"/C/wamp/www/app/AppKernel.php",
+		"/Z/Téléchargements/Vikings.S01E03.HDTV.x264-2HD/Vikings.S01E03.HDTV.x264-2HD.srt",
+		"/C/Users/marcm_000/Downloads/Vikings.S01E01.REPACK.HDTV.x264-2HD/Vikings.S01E01.REPACK.HDTV.x264-2HD.srt",
+		"/C/wamp/www/src/Setec/IntranetBundle/Resources/views/Default/index.html.twig",
+		"/Z/Téléchargements/Office Professional Plus 2013 FR RTM x86 et x64 [MSDN]/Office Professional Plus 2013 FR RTM x86 et x64 [MSDN].nfo",
+		"/C/wamp/www/plupload/test.html",
+		"/C/wamp/www/plupload/css/style.css",
+		"/C/wamp/www/plupload/js/main.js",
+		"/C/Users/marcm_000/AppData/Roaming/Sublime Text 2/Packages/User/SFTP.sublime-settings",
+		"/C/Users/marcm_000/AppData/Roaming/Sublime Text 2/Packages/User/Preferences.sublime-settings",
+		"/C/wamp/www/src/Sdz/BlogBundle/Controller/BlogController.php",
+		"/C/Users/marcm_000/AppData/Roaming/Sublime Text 2/Packages/Default/Preferences.sublime-settings",
+		"/C/wamp/www/app/config/security.yml",
+		"/C/wamp/www/web/app_dev.php",
+		"/C/wamp/www/src/Sdz/UserBundle/Resources/Views/Security/login.html.twig",
+		"/C/wamp/www/src/Sdz/UserBundle/Resources/Views/Profile/show.html.twig",
+		"/C/Documents and Settings/Administrateur/Local Settings/Temp/fz3temp-1/app_dev.php",
+		"/C/Documents and Settings/Administrateur/Local Settings/Temp/fz3temp-1/config.php",
+		"/C/Documents and Settings/Administrateur/Local Settings/Temp/fz3temp-1/AppKernel.php",
+		"/C/wamp/www/.htaccess",
+		"/C/Documents and Settings/Administrateur/Local Settings/Temp/fz3temp-1/index.html.twig",
+		"/C/wamp/www/app/config/routing.yml",
+		"/C/wamp/www/src/Setec/BasecoBundle/Entity/Fiche.php",
+		"/C/wamp/www/src/Setec/BasecoBundle/Entity/Categorie.php",
+		"/C/wamp/www/src/Sdz/BlogBundle/Entity/Tag.php",
+		"/C/wamp/www/symfony/app/Resources/views/main.html.twig",
+		"/C/wamp/www/app/config/config_dev.yml",
+		"/C/wamp/www/app/autoload.php",
+		"/C/wamp/www/app/config/routing_dev.yml",
+		"/C/wamp/www/composer.json",
+		"/C/wamp/www/composer.lock",
+		"/C/Documents and Settings/Administrateur/Application Data/Sublime Text 2/Packages/SublimeCodeIntel/Base File.sublime-settings",
+		"/C/wamp/www/src/Sdz/BlogBundle/Resources/config/routing.yml",
+		"/C/wamp/www/src/Sdz/BlogBundle/Resources/views/Blog/modifier.html.twig",
+		"/C/wamp/www/src/Sdz/BlogBundle/Resources/translations/messages.fr.xlf",
+		"/C/wamp/www/src/Setec/BasecoBundle/Controller/BasecoController.php",
+		"/C/wamp/www/src/Setec/DosAffElecBundle/Controller/DefaultController.php",
+		"/C/wamp/www/src/Setec/DosAffElecBundle/Resources/config/routing.yml",
+		"/C/wamp/www/app/Resources/TwigBundle/views/Exception/error403.html.twig",
+		"/C/wamp/www/app/Resources/TwigBundle/views/Exception/error404.html.twig",
+		"/C/wamp/www/src/Sdz/UserBundle/Resources/Views/Profile/edit.html.twig",
+		"/C/wamp/www/src/Setec/BasecoBundle/Resources/config/routing.yml",
+		"/C/wamp/www/src/Setec/IntranetBundle/Resources/config/routing.yml",
+		"/C/wamp/www/src/Setec/IntranetBundle/Controller/DefaultController.php",
+		"/C/wamp/www/app/config/parameters.ini",
+		"/C/Documents and Settings/Administrateur/Application Data/Sublime Text 2/Packages/Default/Preferences.sublime-settings",
+		"/C/Documents and Settings/Administrateur/Application Data/Sublime Text 2/Packages/User/Preferences.sublime-settings",
+		"/C/wamp/www/src/Sdz/BlogBundle/Entity/Article.php",
+		"/C/wamp/www/src/Setec/DosAffElecBundle/Entity/Fichier.php",
+		"/C/wamp/www/src/Setec/DosAffElecBundle/Entity/Tag.php",
+		"/C/wamp/www/src/Setec/DosAffElecBundle/Entity/Categorie.php",
+		"/C/wamp/www/src/Setec/DosAffElecBundle/Resources/views/Default/depot.html.twig",
+		"/C/wamp/www/app/Resources/TwigBundle/views/Exception/error.html.twig",
+		"/C/wamp/www/app/AppCache.php",
+		"/C/wamp/www/vendor/symfony/symfony/src/Symfony/Bundle/TwigBundle/Resources/views/Exception/error.html.twig",
+		"/C/wamp/www/src/Setec/DosAffElecBundle/Entity/CategorieRepository.php",
+		"/C/wamp/www/src/Sdz/BlogBundle/Entity/Image.php",
+		"/C/wamp/www/src/Setec/DosAffElecBundle/Resources/views/Default/recherche.html.twig",
+		"/C/wamp/www/src/Setec/DosAffElecBundle/Resources/views/Default/admin.html.twig",
+		"/C/wamp/www/src/Sdz/BlogBundle/Entity/Categorie.php",
+		"/C/wamp/www/src/Setec/DosAffElecBundle/Resources/views/Default/index.html.twig",
+		"/C/wamp/www/upload/index.html",
+		"/C/wamp/www/app/Resources/views/base.html.twig",
+		"/C/wamp/www/src/Setec/BasecoBundle/Resources/views/Default/index.html.twig",
+		"/C/wamp/www/src/Setec/BasecoBundle/Resources/views/main.html.twig",
+		"/C/wamp/www/src/Sdz/BlogBundle/Resources/views/base.html.twig",
+		"/C/wamp/www/src/Wmd/WatchMyDeskBundle/Resources/views/Default/test.html.twig",
+		"/C/wamp/www/src/Wmd/WatchMyDeskBundle/Resources/views/Desk/add.html.twig",
+		"/C/wamp/www/src/Setec/BasecoBundle/Resources/views/footer.html.twig",
+		"/C/wamp/www/src/Wmd/WatchMyDeskBundle/Resources/views/Default/index.html.twig",
+		"/C/Documents and Settings/Administrateur/Mes documents/Downloads/gist4299209-31f34e040824140d9788d2669d8540c2e3c9fecf.tar.gz",
+		"/C/wamp/www/app/config/config_prod.yml"
+	],
+	"find":
+	{
+		"height": 34.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"wamp2",
+			"15px",
+			"16px",
+			"6px",
+			"brand",
+			"ff7e00",
+			"00b3be",
+			"a600c9",
+			"1ec3d2",
+			"20cddc",
+			"37c3d0",
+			"4ad8e5",
+			"4ae5d5",
+			"ffc000",
+			"ff3a5f",
+			"ff0042",
+			"ff005a",
+			"ff4e00",
+			"ff7a40",
+			"linear",
+			"500ms",
+			"1000ms",
+			"dropdown",
+			"url",
+			"test",
+			"^\\n",
+			"\\n",
+			"writer",
+			"slow",
+			"Secure",
+			"sdz_blog_ajouter",
+			"body",
+			"justify",
+			"justidy",
+			"apc",
+			"open"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": true,
+		"replace_history":
+		[
+			"wamp",
+			""
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "app/Resources/views/main.html.twig",
+					"settings":
+					{
+						"buffer_size": 6747,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3227,
+								3227
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"codeintel": true,
+							"codeintel_config":
+							{
+								"JavaScript":
+								{
+									"codeintel_max_recursive_dir_depth": 2,
+									"codeintel_scan_files_in_project": false,
+									"javascriptExtraPaths":
+									[
+									]
+								},
+								"PHP":
+								{
+									"codeintel_max_recursive_dir_depth": 5,
+									"codeintel_scan_files_in_project": false,
+									"phpExtraPaths":
+									[
+									]
+								},
+								"Python":
+								{
+									"env":
+									{
+									}
+								}
+							},
+							"codeintel_disabled_languages":
+							[
+							],
+							"codeintel_live": true,
+							"codeintel_live_disabled_languages":
+							[
+							],
+							"codeintel_max_recursive_dir_depth": 10,
+							"codeintel_scan_exclude_dir":
+							{
+								"JavaScript":
+								[
+									"/build/",
+									"/min/"
+								]
+							},
+							"codeintel_scan_files_in_project": true,
+							"codeintel_selected_catalogs":
+							[
+								"PyWin32",
+								"jQuery",
+								"Rails"
+							],
+							"codeintel_snippets": true,
+							"codeintel_syntax_map":
+							{
+								"Python Django": "Python"
+							},
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"sublime_auto_complete": false,
+							"synced": false,
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 702.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 32.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.sftp":
+	{
+		"height": 100.0
+	},
+	"replace":
+	{
+		"height": 62.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"footer",
+				"src/Setec/BasecoBundle/Resources/views/Default/footer.html.twig"
+			],
+			[
+				"login",
+				"src/Setec/SalarieBundle/Resources/views/Security/login.html.twig"
+			],
+			[
+				"ajouter",
+				"src/Sdz/BlogBundle/Resources/views/Blog/ajouter.html.twig"
+			],
+			[
+				"voir",
+				"src/Sdz/BlogBundle/Resources/views/Blog/voir.html.twig"
+			],
+			[
+				"article",
+				"src/Sdz/BlogBundle/Resources/views/Blog/article.html.twig"
+			],
+			[
+				"main",
+				"app/Resources/views/main.html.twig"
+			],
+			[
+				"tag",
+				"src/Sdz/BlogBundle/Entity/Tag.php"
+			],
+			[
+				"routing",
+				"src/Setec/DosAffElecBundle/Resources/config/routing.yml"
+			],
+			[
+				"controller",
+				"src/Setec/BasecoBundle/Controller/BasecoController.php"
+			],
+			[
+				"security",
+				"app/config/security.yml"
+			],
+			[
+				"edit",
+				"src/Sdz/UserBundle/Resources/Views/Profile/edit.html.twig"
+			],
+			[
+				"profil.html",
+				"src/Sdz/UserBundle/Resources/Views/Profile/show.html.twig"
+			],
+			[
+				"para",
+				"app/config/parameters.ini"
+			],
+			[
+				"config.yml",
+				"app/config/config.yml"
+			],
+			[
+				"blog",
+				"src/Sdz/BlogBundle/Controller/BlogController.php"
+			],
+			[
+				"routing.yml",
+				"app/config/routing.yml"
+			],
+			[
+				"main.html",
+				"app/Resources/views/main.html.twig"
+			],
+			[
+				"depot",
+				"src/Setec/DosAffElecBundle/Resources/views/Default/depot.html.twig"
+			],
+			[
+				"image",
+				"src/Sdz/BlogBundle/Entity/Image.php"
+			],
+			[
+				"categor",
+				"src/Sdz/BlogBundle/Entity/Categorie.php"
+			],
+			[
+				"bootst",
+				"web/css/bootstrap.css"
+			],
+			[
+				"base",
+				"app/Resources/views/base.html.twig"
+			],
+			[
+				"bootstrap",
+				"web/css/bootstrap.css"
+			],
+			[
+				"boots",
+				"web/css/bootstrap.css"
+			],
+			[
+				"setecrouting.yml",
+				"src/Setec/BasecoBundle/Resources/config/routing.yml"
+			],
+			[
+				"securi",
+				"app/config/security.yml"
+			],
+			[
+				"basecobundlecontroller",
+				"src/Setec/BasecoBundle/Controller/DefaultController.php"
+			],
+			[
+				"sdzrouting",
+				"src/Sdz/BlogBundle/Resources/config/routing.yml"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": false,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 223.0,
+	"status_bar_visible": true
+}

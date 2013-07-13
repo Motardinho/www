@@ -1,0 +1,3 @@
+setec_gdoc_accueil:
+    pattern:  /
+    defaults: { _controller: SetecGdocBundle:Default:index }

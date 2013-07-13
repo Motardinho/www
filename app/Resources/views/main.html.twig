@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>{% block title %}Jayce{% endblock %}</title>
+        <meta name="description" content="Un blog de développeur proposant des articles sur le framework PHP Symfony 2, PHP 5, Javascript, JQuery, Bootstrap Twitter, CSS 3, HTML 5, Ajax ainsi qu'une veille technologique." />
+        <meta nema="keywords" content="Marc MAGNON, Jayce, blog, développeur, framework PHP, Symfony 2, PHP 5, Javascript, JQuery, Bootstrap Twitter, CSS 3, HTML 5, Ajax, veille technologique" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+        {% block stylesheets %}
+        <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}" />
+        <link rel="stylesheet" href="{{ asset('css/bootstrap-responsive.min.css') }}" />
+        <link rel="stylesheet" href="{{ asset('css/jayce.css') }}" />
+        <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+
+        <!-- google analytics -->
+        oui123
+        <script>
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-39160759-1']);
+            _gaq.push(['_setDomainName', 'jayce.me']);
+            _gaq.push(['_setAllowLinker', true]);
+            _gaq.push(['_trackPageview']);
+
+            (function() {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();
+        </script>
+                 
+        {% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    </head>
+    <body>
+        {% if app.environment == "dev" %}
+        <div style="z-index: 9999; position: fixed; top: 15px; left : 15px; background-color: orange; color: white; text-align: center; font-weight: bold;padding: 4px;">
+            Mode Dev !
+        </div>
+        {% endif %} 
+        <div id="wrap">
+            <div class="navbar navbar-fixed-top">
+                <div class="navbar-inner">
+                    <div class="container">
+                        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </a>
+                        <a class="brand" href="{{ path('sdz_blog_accueil') }}">JAYCE</a>
+                        <div class="nav-collapse collapse">
+                            <div class="pull-right"> 
+                                <ul class="nav">
+                                    <li><a href="{{ path('sdz_blog_accueil') }}">blog</a></li>
+                                    <!--<li><a href="{{ path('sdz_blog_accueil') }}">contact</a></li> -->
+                                    <!-- <li><a href="{{ path('sdz_blog_accueil') }}">Veille</a></li>  -->
+                                    
+                                    <li class="divider-vertical"></li>
+                                    {% if app.user %}
+                                    <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ app.user.prenom ~ ' ' ~ app.user.nom }} <b class="caret"></b></a>
+                                        <ul class="dropdown-menu pull-right">
+                                            <li><a href="{{ path('fos_user_profile_show') }}"><i class="icon-user"></i> Afficher mon profil</a></li>
+                                            {% if is_granted('ROLE_ADMIN') %}
+                                                <li><a href="{{ path('sdz_blog_ajouter') }}"><i class="icon-plus"></i> Ajouter un article</a></li>
+                                            {% endif %}
+                                            <li class="divider"></li>
+                                            <li><a href="{{ path('fos_user_security_logout') }}"><i class="icon-off"></i> Déconnexion</a></li>
+                                        </ul>
+                                    </li>                 
+                                    {% else %}
+                                    <li><a href="{{ path('fos_user_security_login') }}">se connecter</a></li>
+                                    {% endif %}
+                                </ul>   
+                            </div>                        
+                        </div><!--/.nav-collapse -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="container">
+                <div id="push">&nbsp;</div>
+                    
+             <!--    <div class="alert">
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                    Site en cours de développement
+                </div> -->
+                {% block body %}
+                {% endblock %}
+         
+               
+          
+       
+                <div id="push" style="height:80px;">&nbsp;</div>
+            </div>
+
+        </div>
+ 
+        <div id="footer">
+            <div class="container">
+                <p class="credit">
+                    <!-- Tous droits réservés <strong>Jayce</strong>.<br /> -->
+                    <a href="">Contactez moi</a><a href="plan" style="margin-left:40px;">Plan du site</a>
+                </p>
+            </div>
+        </div>
+
+        {% block javascripts %}
+        <!-- version 1.8.2 pour compatibilité dataTables+ColVis -->
+        <script src="{{ asset('js/jquery-1.8.2.min.js') }}"></script>
+        <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+
+        <script>
+            !function ($) {
+                $(function(){
+                    // Fix for dropdowns on mobile devices
+                    $('body').on('touchstart.dropdown', '.dropdown-menu', function (e) { 
+                        e.stopPropagation(); 
+                    });
+                    $(document).on('click','.dropdown-menu a',function(){
+                        document.location = $(this).attr('href');
+                    });
+                })
+            }(window.jQuery);
+
+            $(window).scroll(function() {
+                if ($(window).scrollTop() > 30) {
+                    $('.navbar-inner').addClass('navbar-ombre');
+                } else {
+                    $('.navbar-inner').removeClass('navbar-ombre');
+                }
+            });
+        </script>
+        {% endblock %}
+    </body>
+</html>

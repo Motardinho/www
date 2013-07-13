@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>{% block title %}setec{% endblock %}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        {% block stylesheets %}
+            <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}" />
+            <style type="text/css">
+                body {
+                    padding-top: 60px;
+                    background-color: #fdfdfd;
+                }                
+            </style>
+            <link rel="stylesheet" href="{{ asset('css/bootstrap-responsive.css') }}" />
+        {% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+        <!--[if lt IE 9]>
+        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+    </head>
+    <body>  
+        <div class="container">
+            <div class="offset1 row">
+                <h1>Erreur 403 !</h1>
+                <div class="span5">
+                    <p>
+                        <img src="{{ asset('img/private.jpg') }}"/>
+                    </p>
+                    <a href="{{ path('sdz_blog_accueil') }}">Page d'accueil</a>
+                </div>
+                <div class="span4">
+                    <p class="lead">
+                        Vous n'êtes pas autorisé à accéder à cette page (erreur 403).
+                        Si un accès vous a été octroyé récemment, veuillez vous déconnecter et vous reconnecter afin de récupérer vos nouveaux droits.
+                    <p>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
