@@ -12,8 +12,6 @@ sdz_blog_voir:
     pattern:    /articles/{slug}
     defaults:   { _controller: SdzBlogBundle:Blog:voir }
 
-
-
 sdz_blog_modifier:
     pattern:    /modifier/{slug}
     defaults:   { _controller: SdzBlogBundle:Blog:modifier }

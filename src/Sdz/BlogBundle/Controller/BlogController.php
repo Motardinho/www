@@ -16,10 +16,15 @@ class BlogController extends Controller
         $repository = $this->getDoctrine()
             ->getManager()
             ->getRepository('SdzBlogBundle:Article');
+        
         $nbArticles = $repository->getTotal();
+        
         $nbArticlesPage = 5;
+        
         $nbPages = ceil($nbArticles/$nbArticlesPage);
+        
         $offset = ($page-1) * $nbArticlesPage;
+        
         if ($page < 1 OR $page > $nbPages)
         {
             throw $this->createNotFoundException('Page inexistante (page = '.$page.')');
