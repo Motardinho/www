@@ -120,13 +120,21 @@ class BlogController extends Controller
         
         $form = $this->createFormBuilder($article)
             ->add('date', 'date')
-            ->add('titre', 'text')
+            ->add('titre', 'text', array(
+                    'attr'   =>  array(
+                        'class'   => 'form-control')
+            ))
             ->add('contenu', 'textarea', array('required' => false))
-            ->add('auteur', 'text')
+            ->add('auteur', 'text', array(
+                    'attr'   =>  array(
+                        'class'   => 'form-control')
+            ))
             ->add('publication', 'checkbox', array('required' => false))
             ->add('tags',  null,        array(
                 'property' => 'nom',
-                'multiple' => true
+                'multiple' => true,
+                'attr'   =>  array(
+                        'class'   => 'form-control')
             ))
             ->getForm();
         
@@ -190,6 +198,13 @@ class BlogController extends Controller
         
         return $this->render('SdzBlogBundle:Blog:menu.html.twig',array(
             'liste_articles' => $liste // toto
+        ));
+    }
+
+    public function testerAction($toot)
+    {
+        return $this->render('SdzBlogBundle:Blog:test.html.twig',array(
+            'name' => $toot // toto
         ));
     }
 }
