@@ -16,8 +16,6 @@
     #image > img {
         display: block;
         margin: 0 auto;
-        height: 250px;
-        width: 600px;
     }
 
     #disqus_thread {
@@ -32,8 +30,9 @@
 {% endblock %}
 
 {% block body %}
+
 <div class="row">
-    <div class="span8">
+    <div class="col-lg-8 col-md-8">
         <h2>
             {{ article.titre }}
         </h2>
@@ -41,7 +40,7 @@
 
         {% if article.image is not null %}
             <div id="image">
-                <img src="{{ article.image.url }}" alt="{{ article.image.alt }}" class="img-polaroid" />
+                <img src="{{ article.image.url }}" alt="{{ article.image.alt }}" class="img-polaroid img-responsive" />
             </div>
         {% endif %}
         <!-- {% if article.categories.count > 0 %}
@@ -57,17 +56,17 @@
         </div>
         <hr>
         <p>
-            <a href="{{ path('sdz_blog_accueil') }}" class="btn">
-                <i class="icon-chevron-left icon-white"></i>
+            <a href="{{ path('sdz_blog_accueil') }}" class="btn btn-default">
+                <!-- <i class="icon-chevron-left icon-white"></i> -->
                 Retour aux articles
             </a>
             {% if is_granted('ROLE_ADMIN') %}
-            <a href="{{ path('sdz_blog_modifier', {'slug': article.slug}) }}" class="btn">
-                <i class="icon-edit icon-white"></i>
+            <a href="{{ path('sdz_blog_modifier', {'slug': article.slug}) }}" class="btn btn-default">
+                <!-- <i class="icon-edit icon-white"></i> -->
                 Modifier l'article
             </a>
-            <a href="{{ path('sdz_blog_supprimer', {'slug': article.slug}) }}" class="btn">
-                <i class="icon-trash icon-white"></i>
+            <a href="{{ path('sdz_blog_supprimer', {'slug': article.slug}) }}" class="btn btn-default">
+                <!-- <i class="icon-trash icon-white"></i> -->
                 Supprimer l'article
             </a>
             {% endif %}
@@ -92,12 +91,12 @@
         </p>
 
     </div>
-    <div id="side" class="span4">
+    <div id="side" class="col-lg-4 col-md-4">
         <div>
             <h3>Mots-clés</h3>
             <p>
                 {% for tag in tags %}
-                    <span class="label">{{ tag.nom}}</span>
+                    <span class="label label-default">{{ tag.nom}}</span>
                 {% endfor %}
             </p>
         </div>
@@ -113,7 +112,11 @@
 $(document).ready(function() {
         prettyPrint();
 
-        $('.editr').editr();
+        // $('.editr').editr();
+
+
+       
     });
+
 </script>
 {% endblock %}

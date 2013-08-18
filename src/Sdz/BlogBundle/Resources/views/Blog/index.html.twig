@@ -91,7 +91,7 @@ border-radius: 3px 3px 0 0;
                     <div class="article box">
                         {% if article.image is not null %}
                             <div id="" class="image-article">
-                                <img src="{{ article.image.url }}" alt="{{ article.image.alt }}"  />
+                                <img src="{{ article.image.url }}" alt="{{ article.image.alt }}" class="img-responsive" />
                             </div>
                         {% endif %}
                         <div class="entete-article">
@@ -141,4 +141,3 @@ border-radius: 3px 3px 0 0;
 
    
 {% endblock %}
-

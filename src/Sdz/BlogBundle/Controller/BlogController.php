@@ -201,10 +201,8 @@ class BlogController extends Controller
         ));
     }
 
-    public function testerAction($toot)
+    public function testerAction()
     {
-        return $this->render('SdzBlogBundle:Blog:test.html.twig',array(
-            'name' => $toot // toto
-        ));
+        return new Response('COucou !');
     }
 }

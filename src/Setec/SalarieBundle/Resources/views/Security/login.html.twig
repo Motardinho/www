@@ -49,10 +49,10 @@
     <form action="{{ path("fos_user_security_check") }}" method="post" class="form-signin">
         <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
         <label for="username">{{ 'security.login.username'|trans({}, 'FOSUserBundle') }}</label>
-        <input type="text" id="username" name="_username" class="input-block-level" value="{{ last_username }}" required="required" />
+        <input type="text" id="username" name="_username" class="input-block-level form-control" value="{{ last_username }}" required="required" />
             
         <label for="password">{{ 'security.login.password'|trans({}, 'FOSUserBundle') }}</label>
-        <input type="password" id="password" name="_password" class="input-block-level" required="required" />
+        <input type="password" id="password" name="_password" class="input-block-level form-control" required="required" />
 
         <div class="controls form-inline">
             <label for="remember_me" class="checkbox">

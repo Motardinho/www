@@ -1,3 +1,7 @@
+sdz_blog_tester:
+    pattern:    /test
+    defaults:   { _controller: SdzBlogBundle:Blog:tester }
+
 sdz_blog_ajouter:
     pattern:    /ajouter
     defaults:   { _controller: SdzBlogBundle:Blog:ajouter }
