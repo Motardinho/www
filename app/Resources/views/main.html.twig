@@ -2,15 +2,15 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>{% block title %}Jayce{% endblock %}</title>
         <meta name="description" content="Un blog de développeur proposant des articles sur le framework PHP Symfony 2, PHP 5, Javascript, JQuery, Bootstrap Twitter, CSS 3, HTML 5, Ajax ainsi qu'une veille technologique." />
         <meta nema="keywords" content="Marc MAGNON, Jayce, blog, développeur, framework PHP, Symfony 2, PHP 5, Javascript, JQuery, Bootstrap Twitter, CSS 3, HTML 5, Ajax, veille technologique" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
         {% block stylesheets %}
         <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}" />
-        <link rel="stylesheet" href="{{ asset('css/bootstrap-responsive.min.css') }}" />
         <link rel="stylesheet" href="{{ asset('css/jayce.css') }}" />
-        <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 
         <!-- google analytics -->
         <script>
@@ -32,12 +32,104 @@
     </head>
     <body>
         {% if app.environment == "dev" %}
-        <div style="z-index: 9999; position: fixed; top: 15px; left : 15px; background-color: orange; color: white; text-align: center; font-weight: bold;padding: 4px;">
+        <div style="z-index: 9999; position: fixed; bottom: 15px; left: 15px;  background-color: orange; color: white; text-align: center; font-weight: bold;padding: 4px;">
             Mode Dev !
         </div>
         {% endif %} 
         <div id="wrap">
-            <div class="navbar navbar-fixed-top">
+            <div class="navbar navbar-static-top">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="{{ path('sdz_blog_accueil') }}">JAYCE</a>
+                    </div>
+                    <div class="navbar-collapse collapse" style="height: 1px;">
+                        <ul class="nav navbar-nav pull-right">
+                            <li><a href="{{ path('sdz_blog_accueil') }}">blog</a></li>
+                            <li class="divider-vertical"></li>
+                            {% if app.user %}
+                            <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ app.user.prenom ~ ' ' ~ app.user.nom }} <b class="caret"></b></a>
+                                <ul class="dropdown-menu pull-right">
+                                    <li><a href="{{ path('fos_user_profile_show') }}"><i class="icon-user"></i> Afficher mon profil</a></li>
+                                    {% if is_granted('ROLE_ADMIN') %}
+                                        <li><a href="{{ path('sdz_blog_ajouter') }}"><i class="icon-plus"></i> Ajouter un article</a></li>
+                                    {% endif %}
+                                    <li class="divider"></li>
+                                    <li><a href="{{ path('fos_user_security_logout') }}"><i class="icon-off"></i> Déconnexion</a></li>
+                                </ul>
+                            </li>                 
+                            {% else %}
+                            <li><a href="{{ path('fos_user_security_login') }}">se connecter</a></li>
+                            {% endif %}
+                        </ul>
+                    </div><!--/.nav-collapse -->
+                </div>
+            </div>
+           <!--  <div class="navbar navbar-static-top">
+                <div class="container">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="{{ path('sdz_blog_accueil') }}">JAYCE</a>
+                    <div class="nav-collapse collapse">
+                        <ul class="nav navbar-nav pull-right">
+                            <li><a href="{{ path('sdz_blog_accueil') }}">blog</a></li>
+                            <li class="divider-vertical"></li>
+                            {% if app.user %}
+                            <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ app.user.prenom ~ ' ' ~ app.user.nom }} <b class="caret"></b></a>
+                                <ul class="dropdown-menu pull-right">
+                                    <li><a href="{{ path('fos_user_profile_show') }}"><i class="icon-user"></i> Afficher mon profil</a></li>
+                                    {% if is_granted('ROLE_ADMIN') %}
+                                        <li><a href="{{ path('sdz_blog_ajouter') }}"><i class="icon-plus"></i> Ajouter un article</a></li>
+                                    {% endif %}
+                                    <li class="divider"></li>
+                                    <li><a href="{{ path('fos_user_security_logout') }}"><i class="icon-off"></i> Déconnexion</a></li>
+                                </ul>
+                            </li>                 
+                            {% else %}
+                            <li><a href="{{ path('fos_user_security_login') }}">se connecter</a></li>
+                            {% endif %}
+                        </ul>
+                    </div>
+                </div>
+            </div> -->
+            <!-- <div class="navbar">
+                <div class="container">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="{{ path('sdz_blog_accueil') }}">JAYCE</a>
+                    <div class="nav-collapse collapse">
+                        <ul class="nav navbar-nav">
+                            <li><a href="{{ path('sdz_blog_accueil') }}">blog</a></li>
+                            <li class="divider-vertical"></li>
+                            {% if app.user %}
+                            <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ app.user.prenom ~ ' ' ~ app.user.nom }} <b class="caret"></b></a>
+                                <ul class="dropdown-menu pull-right">
+                                    <li><a href="{{ path('fos_user_profile_show') }}"><i class="icon-user"></i> Afficher mon profil</a></li>
+                                    {% if is_granted('ROLE_ADMIN') %}
+                                        <li><a href="{{ path('sdz_blog_ajouter') }}"><i class="icon-plus"></i> Ajouter un article</a></li>
+                                    {% endif %}
+                                    <li class="divider"></li>
+                                    <li><a href="{{ path('fos_user_security_logout') }}"><i class="icon-off"></i> Déconnexion</a></li>
+                                </ul>
+                            </li>                 
+                            {% else %}
+                            <li><a href="{{ path('fos_user_security_login') }}">se connecter</a></li>
+                            {% endif %}
+                        </ul>
+                    </div>
+                </div>
+            </div> -->
+         <!--    <div class="navbar navbar-fixed-top">
                 <div class="navbar-inner">
                     <div class="container">
                         <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
@@ -51,7 +143,7 @@
                                 <ul class="nav">
                                     <li><a href="{{ path('sdz_blog_accueil') }}">blog</a></li>
                                     <li><a href="{{ path('sdz_blog_accueil') }}">contact</a></li>
-                                    <!-- <li><a href="{{ path('sdz_blog_accueil') }}">Veille</a></li>  -->
+                                    <li><a href="{{ path('sdz_blog_accueil') }}">Veille</a></li> 
                                     
                                     <li class="divider-vertical"></li>
                                     {% if app.user %}
@@ -70,18 +162,19 @@
                                     {% endif %}
                                 </ul>   
                             </div>                        
-                        </div><!--/.nav-collapse -->
+                        </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
 
             <div class="container">
-                <div id="push">&nbsp;</div>
+                <!-- <div id="push">&nbsp;</div> -->
                     
              <!--    <div class="alert">
                     <button type="button" class="close" data-dismiss="alert">&times;</button>
                     Site en cours de développement
                 </div> -->
+                <button id="t411">t411</button>
                 {% block body %}
                 {% endblock %}
          
@@ -96,8 +189,8 @@
         <div id="footer">
             <div class="container">
                 <p class="credit">
-                    <!-- Tous droits réservés <strong>Jayce</strong>.<br /> -->
-                    <a href="">Contactez moi</a><a href="plan" style="margin-left:40px;">Plan du site</a>
+                    Tous droits réservés <strong>Jayce</strong>.
+                    <!-- <a href="">Contactez moi</a><a href="plan" style="margin-left:40px;">Plan du site</a> -->
                 </p>
             </div>
         </div>
@@ -105,7 +198,7 @@
         {% block javascripts %}
         <!-- version 1.8.2 pour compatibilité dataTables+ColVis -->
         <script src="{{ asset('js/jquery-1.8.2.min.js') }}"></script>
-        <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+        <script src="{{ asset('js/bootstrap.js') }}"></script>
 
         <script>
             !function ($) {
@@ -127,6 +220,22 @@
                     $('.navbar-inner').removeClass('navbar-ombre');
                 }
             });
+$.ajaxSetup({
+    beforeSend: function(xhr) {
+        xhr.setRequestHeader('authorization', '8376556:229:8428e01c35fc9643d564bec6f5ef973e');
+    }
+});
+            $('button#t411').click(function() {
+                $.ajax({
+         
+                    
+                    url: "http://api.t411.me/users/profile/447571",
+                    type: "GET",
+                    dataType: 'jsonp'
+                }).done(function( msg ) {
+                    alert( "réponse : " + msg );
+                });
+            })
         </script>
         {% endblock %}
     </body>
